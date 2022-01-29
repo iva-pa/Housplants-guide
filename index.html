@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guide to Houseplants</title>
+    <style>
+        h1 {
+            line-height: 1.5;
+            color: #35495e;
+        }
+
+        h2 {
+            color: #347474;
+            line-height: 1.5;
+        }
+
+        h6 {
+            line-height: 1.2;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        p {
+            line-height: 1.2;
+            font-size: 14px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 6px;
+            padding: 10px 0px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 15px 60px;
+            border-radius: 6px;
+            background: linear-gradient(to top,
+                    #d5dee7 0%,
+                    #ffb5b5 0%,
+                    #c9ffbf 100%);
+            text-align: center;
+            font-family: Helvetica, sans-serif;
+            sans-serif;
+        }
+
+        button {
+            line-height: 1.5;
+            padding: 20px 30px;
+            background: #347474;
+            color: #d5dee7;
+            font-size: 16px;
+            font-style: bold;
+            border-radius: 6px;
+            transition: all 200ms ease-in-out;
+            box-shadow: 7px 7px 10px #35495e;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            cursor: pointer;
+        }
+
+        .codedBy {
+            font-size: 12px;
+            color: #347474;
+        }
+
+        a {
+            text-decoration: none;
+            color: #35495e
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #347474
+        }
+
+        .click {
+            font-weight: bold;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/018/464/original/WB-Create-Your-New-Year-Plant-Journal-houseplant-leaf-header-1536x800.png?1633710277"
+            alt="Plants" />
+        <h1>The Beginner’s Guide to Houseplants</h1>
+        <h2>How to grow happy and healthy houseplants</h2>
+
+        <h4>
+            If you want your houseplants to thrive there are a few things you should
+            keep in mind. It all depends on the type of plant, the location and when
+            and how you water it.
+        </h4>
+        <p>
+            <strong>Light and Location</strong><br />
+            When you get your plant home, it’s time to consider the spot where the
+            plant would most likely thrive. Look at the light options in your home.
+            All plants need light to grow, but some need more light than others.<br />
+            <br /><strong>When and how to Water your Plant</strong><br />The main
+            reason most houseplants don’t thrive is because of overwatering. Too
+            much water can harm your plant more than too little water. Don’t just
+            water your plant every Saturday because it fits your schedule, the plant
+            might not need the water yet. The good rule of thumb is to stick your
+            finger into the soil. If the soil is dry, give your plant a good
+            watering. If the soil is still moist from the last time, wait few more
+            days and then check again.
+        </p>
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/018/457/original/houseplants_apartment.jpg?1633708245"
+            alt="Plants in apartment" width="1000px;" />
+        <button>
+            <strong>🌵 Let us help you choose the right houseplant</strong>
+        </button>
+        <h6></h6>
+        <p class="click">
+            If you are curious about how to take care of (just about) any type of
+            houseplant, please click
+            <a href="https://www.apartmenttherapy.com/features/houseplant-guide-encyclopedia" target="blank">here</a>.
+        </p>
+        <p class="codedBy">Coded by Iva Papcunova</p>
+    </div>
+</body>
+<script>
+    function pickPlant() {
+        let name = prompt("What is your name?");
+        let conditions = prompt(
+            "Please indicate how much light you can provide to your plant on a scale from 1 (🌥 low light) to 3 (☀ bright light)."
+        );
+        let h6 = document.querySelector("h6");
+        if (conditions >= 1 && conditions <= 3) {
+            alert(
+                "Thank you " +
+                name +
+                ". Please click on OK to find the best fitting houseplant 🌱"
+            );
+        } else {
+            alert("Please enter number between 1 and 3.");
+        }
+        if (conditions === "3") {
+            h6.innerHTML =
+                "<strong>Bright Light</strong><br/>This means direct sunlight, a bright room that has a southern or western facing window and that receives sunlight most of the day. A good test for a rooms lighting is to check out the shadows in that room. A room with bright light will produce a strong well defined shadow on the wall.<br />Ideal bright and direct light plants:<br /><br /><strong>Jade plant<br />Aloe Vera<br />Succulents<br />Yuca</strong>";
+        } else if (conditions === "2") {
+            h6.innerHTML =
+                "<strong>Medium Light</strong><br />Indirect, partial, or filtered light. An ideal room for a plant with this type of lighting needs would be one with a South, Southeast, East, or even West window. A plant with medium light requirements would not need the full day of sun and they can tend to be put a bit further away from the window. <br />Ideal moderate light plants:<br /><br /><strong>Croton<br />Monstera<br />Pilea / Pancake Plant</strong>";
+        } else if (conditions === "1") {
+            h6.innerHTML =
+                "<strong>Low Light</strong><br />This doesn’t mean no light. If it’s too dark in a room to read a book then it’s too dark to have a plant. Rooms that have a North facing window would be good for plants with these needs. Rooms with South, West, or East windows can still work if the windows have shaded trees or buildings blocking direct light. <br />Ideal low light plants:<br /><br /><strong>Snake Plant<br />Pothos<br />Dracaena</strong>";
+        }
+    }
+    let pickButton = document.querySelector("button");
+    pickButton.addEventListener("click", pickPlant);
+</script>
+
+</html>
